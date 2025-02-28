@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <style>
     *{
         padding: 0;
@@ -15,154 +23,130 @@
           width: 100%;
         }
       
-      /* img {
-        max-width: 100%;
-        height: auto;
-      } */
-       #todo{
-          cursor: pointer;
-       }
-      
-      #nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: #224099;
-        color: white;
-        /* position: sticky; */
-        top: 0;
-        padding: 15px;
-        z-index: 1000;
-        margin-bottom: 3%;
-      }
-      
-      /* DROPDOWN MENU */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-      }
-      
-      /* DROPDOWN BUTTON */
-      .dropbtn {
-        padding: 10px;
-      }
-      
-      /* DROPDOWN CONTENT */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 150px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        z-index: 1000;
-        top: 100%;
-        left: 0;
-      }
-      
-      .dropdown-content a {
-        margin: 0;
-        padding: 0;
-        color: black;
-        padding: 10px;
-        text-decoration: none;
-        display: block;
-      }
-      
-      /* HOVER EFFECT */
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      
-      .dropdown-content a:hover {
-        background-color: #ddd;
-      }
-      
-      #mu {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      #nav_btn {
-        border-color: aliceblue;
-        height: 30%;
-        padding: 8px;
-        font-size: 20px;
-        border-radius: 7px;
-        cursor: pointer;
-        margin-top: 0px;
-      }
-      #title {
-        display: flex;
-        /* flex-wrap: wrap; */
-        /* flex-direction:row; */
-        align-items: center;
-        justify-content: space-between;
-        gap: 10%;
-        /* font-style: oblique; */
-        box-sizing: border-box;
-      }
-      
       #ta1,#ta2 {
-        text-decoration: none;
         color: white;
       }
-      
+
+      #tmc {
+        gap: 3%;
+      }
+
+      #MC h1:first-child {
+        color: rgba(0, 0, 0, 0.916);
+        font-size: 1.6em;
+      }
+      #MC h1:last-child {
+        color: rgb(232, 67, 7);
+        font-size: 1.6em;
+      }
+
+      @media screen and (min-width: 1300px) and (max-width: 100vw) {
+        .nav-item {
+          margin-left: 85px;
+        }
+        #nav {
+          display: flex;
+          padding-left: 6%;
+          padding-right: 6%;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
+      @media screen and (min-width: 990px) and (max-width: 1299px) {
+        .nav-item {
+          margin-left: 30px;
+        }
+        #nav {
+          display: flex;
+          padding-left: 3%;
+          padding-right: 3%;
+        }
+      }
+
+      #todo {
+        cursor: pointer;
+      }
+
       #MC {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1.7%;
         background-color: rgb(217, 238, 111);
         border-radius: 8px;
         border: 5px solid #224099;
       }
-      @media (max-width: 768px) {
-  #nav {
-    flex-direction: column; 
-    padding: 10px;
-    
-  }
+      @media screen and (min-width: 0px) and (max-width: 500px) {
+        #icon {
+          height: 70px;
+          width: 70px;
+        }
 
-  #nav h3,
-  .dropdown {
-    margin: 5px 0;
-  }
-}
+        #MC h1:first-child {
+          font-size: 22px;
+        }
+        #MC h1:last-child {
+          font-size: 22px;
+        }
+        #ta {
+          color: white;
+        }
+        #pagesDropdown,
+        #coursesDropdown,
+        #todo {
+          color: white;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
+      @media screen and (min-width: 500px) and (max-width: 100vw) {
+        #pagesDropdown,
+        #coursesDropdown,
+        #todo {
+          color: white;
+        }
+
+        #icon {
+          height: 100px;
+          width: 100px;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
 #video {
-    width:80vw;/* Full viewport width */
-    
+    width:80vw;
     margin: auto;
-    height: 56.25vw; /* Aspect ratio of 16:9 (9/16 = 0.5625) */
-    max-height: 100vh; /* Ensure it doesn't exceed the viewport height */
-    position: relative; /* For positioning the iframe */
-    overflow: hidden; /* Hide any overflow */
-
-}
+    height: 56.25vw; 
+    max-height: 100vh; 
+    position: relative; 
+    overflow: hidden; 
+  }
 
 iframe {
     position: absolute;
     top: 10%;
     left: 10%;
-
     width: 80%;
     height: 100%;
-    border: none; /* Remove iframe border */
+    border: none; 
 }
 #head{
     text-align: center;
-    /* display: flex; */
-    
     font-family: "Arial", sans-serif;
     font-size: 24px;
     font-weight: bold;
-    color: #1E90FF; /* DodgerBlue */
+    color: #1E90FF; 
     text-shadow: 2px 2px 5px rgba(30, 144, 255, 0.5);
     padding: 10px;
-    /* border: 2px solid #1E90FF; */
-    /* margin-top: 10%; */
-   
     margin: auto;
-     border-radius: 8px;
+    border-radius: 8px;
+    margin-top: 2%;
 }
 
     
@@ -171,25 +155,24 @@ iframe {
     background: white;
     border-radius: 20px;
     padding: 40px;
-    margin: 20px auto; /* Center the section */
+    margin: 20px auto; 
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
-    align-items: start; /* Align items to the top */
+    align-items: start; 
 }
 
 .testimonial-image {
-    width: 100%; /* Make the image responsive */
+    width: 100%;
     margin-top: 10vh;
     height: 670px;
-    /* height: auto;  */
     border-radius: 20px;
-    grid-column: 1 / 2; /* Place the image in the first column */
+    grid-column: 1 / 2; 
 }
 
 .testimonials {
     margin-top: 13vh;
-    grid-column: 2 / 3; /* Place testimonials in the second column */
+    grid-column: 2 / 3; 
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -236,25 +219,25 @@ iframe {
 }
 
 h2 {
-    grid-column: span 2; /* Span across both columns */
+    grid-column: span 2; 
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .testimonial-section {
-        grid-template-columns: 1fr; /* Switch to a single column on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     .testimonial-image {
         height: auto;
-        grid-column: 1 / 2; /* Place the image in the first column */
+        grid-column: 1 / 2; 
     }
 
     .testimonials {
         margin-top: 0px;
-        grid-column: 1 / 2; /* Place testimonials below the image */
+        grid-column: 1 / 2; 
     }
 }
 
@@ -330,7 +313,6 @@ h2 {
   gap: 10px;
   padding: 10px;
   margin: auto;
-  /* height:40vh; */
   flex-wrap: wrap;
 }
 
@@ -404,47 +386,97 @@ h2 {
         justify-content: space-evenly;
     }
 }
+/* .t_img{
+  width: 50%;
+} */
     
     </style>
 </head>
 <body>
-    <nav id="nav">
-        <div id="title">
-          <img src="./assets/icon.png" height="50px" width="50px" alt="" />
-          <div id="MC">
-            <h1 style="color: rgba(0, 0, 0, 0.916)">MANA</h1>
-            <h1 style="color: rgb(232, 67, 7)">COLLEGE</h1>
-          </div>
-        </div>
-
-        <h3 id="ta1">Home</h3>
-        <h3 id="ta2">About</h3>
-
-        <!-- Courses Dropdown -->
-        <div class="dropdown">
-          <h3 class="dropbtn">Courses ⌵</h3>
-          <div class="dropdown-content">
-            <a id="cr1">Web Development</a>
-            <a id="cr2">Data Science</a>
-            <a  id="cr3">Graphic Design</a>
-          </div>
-        </div>
-
-        <!-- Pages Dropdown -->
-        <div class="dropdown">
-          <h3 class="dropbtn">Pages ⌵</h3>
-          <div class="dropdown-content">
-            <a href="#">Pricing</a>
-            <a href="#">Career</a>
-            <a href="#">Teacher</a>
-            <a href="#">FAQ</a>
-            <a href="#">404 Page</a>
-          </div>
-        </div>
-
-        <h3 id="todo">Plan activities<h3>
-        <button id="nav_btn">Logout</button>
-      </nav>
+  <nav
+  id="nav"
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #224099"
+>
+  <div class="container-fluid">
+    <a id="tmc" class="navbar-brand d-flex align-items-center" href="#">
+      <img id="icon" src="./icon.png" alt="" />
+      <div id="MC" class="ms-2">
+        <h1>MANA</h1>
+        <h1>COLLEGE</h1>
+      </div>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" id="ta1" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="ta2" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="coursesDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Courses</a
+          >
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" id="cr1" href="#course_imgs"
+                >Web Development</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" id="cr2" href="#course_imgs"
+                >Data Science</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" id="cr3" href="#course_imgs"
+                >Graphic Design</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="pagesDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Pages</a
+          >
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#course_imgs">Career</a></li>
+            <li>
+              <a class="dropdown-item" id="teacher" href="#">Teacher</a>
+            </li>
+            <li><a class="dropdown-item" id="faq" href="#">FAQ</a></li>
+            <li><a class="dropdown-item" href="#">404 Page</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="todo" href="#">Plan Activities</a>
+        </li>
+        <li class="nav-item">
+          <button id="nav_btn" class="btn btn-outline-light">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
       <h1 id="head">Data Science - Science,Technology and Data  </h1>
       <section id="video">
         <iframe src="https://www.youtube.com/embed/-ETQ97mXXF0?si=lpsrRx8xm9yTd37R" 
@@ -458,7 +490,7 @@ h2 {
     
     <div class="testimonial-section">
         <div class="t_img">
-            <img class="testimonial-image" src="./assets/review.jpg" alt="Students">
+            <img class="testimonial-image" src="./review.jpg" alt="Students">
         </div>
         
         <div class="testimonials">
@@ -580,16 +612,7 @@ h2 {
                             <li><a href="#">FAQs</a></li>
                         </ul>
                     </div>
-                    <!-- <div class="useful-links">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Disclaimer</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Help Center</a></li>
-                        </ul>
-                    </div> -->
+                
                     <div class="working-hours">
                         <h3>Working Hours</h3>
                         <p>Monday - Friday<br>9 AM - 3 PM</p>
@@ -611,6 +634,10 @@ h2 {
         home.addEventListener("click",()=>{
            location.assign("./jsproject3.html")
         })
+        let home2 = document.getElementById("ta2")
+        home2.addEventListener("click",()=>{
+           location.assign("./jsproject3.html")
+        })
         let cr1 = document.getElementById("cr1")
         cr1.addEventListener("click",()=>{
            location.assign("./jsprojectcourse1.html")
@@ -625,8 +652,24 @@ h2 {
         })
         let logout = document.getElementById("nav_btn");
         logout.addEventListener("click", () => {
-          location.replace("./firebase.html");
+          location.replace("./index.html");
         });
+        let todo = document.getElementById("todo");
+        todo.addEventListener("click", () => {
+            location.assign("./todoupdated.html")
+          });
+        let subscribe = document.getElementById("subform");
+        subscribe.addEventListener("submit", () => {
+            alert("You are Subscribed to Mana College Newsletter")
+          });
+          let teacher = document.getElementById("teacher")
+          teacher.addEventListener("click", () => {
+            location.assign("./jsprojectteachers.html")
+          });
+          let faq = document.getElementById("faq")
+          faq.addEventListener("click", () => {
+            location.assign("./jsprojectteachers.html")
+          });
     </script>
       
 
