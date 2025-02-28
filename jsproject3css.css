@@ -7,23 +7,58 @@ body, html {
     overflow-x: hidden;
     width: 100%;
   }
-  #ta {
-    text-decoration: none;
+#ta {
     color: white;
  }
+  
+ #tmc{
+    gap:3%;
+ }
+ 
+
 
 #MC h1:first-child {
 color: rgba(0, 0, 0, 0.916);
+font-size: 1.6em;
 }
 #MC h1:last-child {
 color: rgb(232, 67, 7);
+font-size: 1.6em;
 }
+
+
+
 
 /* img {
   max-width: 100%;
   height: auto;
 } */
 
+@media screen and (min-width:1300px) and (max-width:100vw){
+  .nav-item{
+    margin-left: 85px;
+  }
+  #nav{
+    display: flex;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  #nav_btn{
+    color: black;
+    background-color: white;
+  }
+}
+@media screen and (min-width:990px) and (max-width:1299px){
+  .nav-item{
+    margin-left: 30px;
+  }
+  #nav{
+    display: flex;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  
+}
  
  #todo{
     cursor: pointer;
@@ -35,12 +70,48 @@ color: rgb(232, 67, 7);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding:1.7%;
   background-color: rgb(217, 238, 111);
   border-radius: 8px;
   border: 5px solid #224099;
 }
+@media screen and (min-width:0px) and (max-width:500px) {
+  #icon{
+    height: 70px;
+    width: 70px;
+  } 
+  
+  #MC h1:first-child {
+     font-size: 22px;
+    }
+    #MC h1:last-child {
+      font-size: 22px;
+    }
+    #ta {
+      color: white;
+   }
+   #pagesDropdown,#coursesDropdown,#todo{
+    color: white;
+  }
+  #nav_btn{
+    color: black;
+    background-color: white;
+  }
+}
+@media screen and (min-width:500px) and (max-width:100vw){
+  #pagesDropdown,#coursesDropdown,#todo{
+    color: white;
+  }
 
-
+ #icon{
+  height: 100px;
+  width: 100px;
+ }
+ #nav_btn{
+  color: black;
+  background-color: white;
+}
+}
 
 
 
