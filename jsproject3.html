@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="./jsproject3css.css"></link>
+    <script src="./jsproject3js.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #224099;">
+      <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="./assets/icon.png" height="50px" width="50px" alt="" />
+              <div id="MC" class="ms-2">
+                  <h1>MANA</h1>
+                  <h1>COLLEGE</h1>
+              </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" id="ta" href="#">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" id="ta" href="#">About</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown">Courses</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#course_imgs">Web Development</a></li>
+                          <li><a class="dropdown-item" href="#course_imgs">Data Science</a></li>
+                          <li><a class="dropdown-item" href="#course_imgs">Graphic Design</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">Pages</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#course_imgs">Career</a></li>
+                          <li><a class="dropdown-item" id="teacher" href="#">Teacher</a></li>
+                          <li><a class="dropdown-item" id="faq" href="#">FAQ</a></li>
+                          <li><a class="dropdown-item" href="#">404 Page</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" id="todo" href="#">Plan Activities</a></li>
+                  <li class="nav-item"><button id="nav_btn" class="btn btn-outline-light">Logout</button></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+     
+
+      <section id="sec">
+        <div id="sec-content">
+          <h3>WELCOME TO MANA COLLEGE</h3>
+          <h1>
+            Transform Your Future with <br />
+            Expert-Led Online Courses
+          </h1>
+          <p>Join our high-quality courses and learn from the best.</p>
+          <div class="buttons">
+            <button class="btn-primary">Get Started</button>
+            <button class="btn-outline"><a id="bto" href="#course_imgs">Browse Courses</a></button>
+          </div>
+        </div>
+
+        <div id="sec-image">
+          <img src="./assets/project-img1.png" alt="Student" />
+          <div class="stats">
+            <div class="stat-box">
+              <h2>250+</h2>
+              <p>Best Instructors</p>
+            </div>
+            <div class="stat-box">
+              <h2>2,000+</h2>
+              <p>Courses</p>
+            </div>
+            <div class="stat-box">
+              <h2>10,000+</h2>
+              <p>Students</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div class="header">About Us</div>
+        <div class="content">
+          <div class="text-section">
+            <div class="tp">
+              <p>
+                We are a passionate team dedicated to bringing innovative
+                solutions to our customers. Our mission is to empower businesses
+                and individuals with cutting-edge technology and exceptional
+                services.
+              </p>
+              <p>
+                With years of experience in the industry, we take pride in
+                delivering quality products and unmatched customer support.
+              </p>
+            </div>
+            <div class="features">
+              <span style="display: flex; flex-direction: row">
+                
+  
+                <p style="margin-right: 3px;" > Innovative Learning </p>
+                <img
+                  style="margin: 3px",
+                  height="28px"
+                  src="./assets/tick-success-svgrepo-com.svg"
+                />
+              </span>
+              <span style="display: flex; flex-direction: row">
+                
+  
+                <p style="margin-right: 27px;" > Unlimited Access </p>
+                <img
+                  style="margin: 3px",
+                  height="28px"
+                  src="./assets/tick-success-svgrepo-com.svg"
+                />
+              </span>
+              <span style="display: flex; flex-direction: row">
+                
+  
+                <p style="margin-right: 36px;" > Superior Results   </p>
+                 
+                <img
+                  style="margin: 3px",
+                  height="28px"
+                  src="./assets/tick-success-svgrepo-com.svg"
+                />
+              </span>
+              <span style="display: flex; flex-direction: row">
+                
+  
+                <p style="margin-right: 27px;">Digital Education </p>
+                <img
+                  style="margin: 3px",
+                  height="28px"
+                  src="./assets/tick-success-svgrepo-com.svg"
+                />
+              </span>
+              <!-- <div><i class="fa"></i> Innovative Learning ☑</div>
+              <div><i class="fa"></i> Unlimited Access ☑</div>
+              <div><i class="fa"></i> Superior Results ☑</div>
+              <div><i class="fa"></i> Digital Education ☑</div> -->
+            </div>
+          </div>
+          <div class="image-section">
+            <img src="./assets/project-img2.avif" alt="About Us" />
+          </div>
+        </div>
+      </div>
+      <div class="courses">
+        <div>
+          <img id="course_imgs" src="./assets/course-1.jpg" alt="course-1" />
+          <h1 id="crh">Web Development</h1>
+          <span style="display: flex; flex-direction: row; gap: 10px">
+            <span style="display: flex; flex-direction: row">
+              <img
+                style="margin: 5px"
+                height="10px"
+                
+                width="12px"
+                src="./assets/time-svgrepo-com.svg"
+              />
+              <p display="font-size:15px;">120 Days</p>
+            </span>
+            <span style="display: flex; flex-direction: row">
+              <img
+              style="margin: 5px"
+              height="10px"
+                
+                src="./assets/certificate-contract-svgrepo-com.svg"
+              />
+
+              <p display="font-size:15px;">Certificate</p>
+            </span>
+          </span>
+          <p id="course_p">
+            Kick start your carrer with Web development, is a process of building and maintaining websites and web applications. It involves front-end (user interface), back-end (server-side logic), and database management to create functional and interactive online experiences.
+          </p>
+          <br />
+          <button id="course_btn1">Get Started</button>
+        </div>
+        <div>
+          <img id="course_imgs" src="./assets/course-3.jpg" alt="course-1" />
+          <h1 id="crh">Data Science</h1>
+          <span style="display: flex; flex-direction: row; gap: 10px">
+            <span style="display: flex; flex-direction: row">
+              <img
+                style="margin: 5px"
+                height="10px"
+                
+                width="12px"
+                src="./assets/time-svgrepo-com.svg"
+              />
+              <p display="font-size:15px;">120 Days</p>
+            </span>
+            <span style="display: flex; flex-direction: row">
+              <img
+                style="margin: 5px",
+                height="13px"
+                src="./assets/certificate-contract-svgrepo-com.svg"
+              />
+
+              <p display="font-size:15px;">Certificate</p>
+            </span>
+          </span>
+          <p id="course_p">
+            Transform your career with our Data Science Program & get hired as
+            Data Scientist. Develop expertise in ML and AI from industry experts
+            & get hired as Data Scientist.
+          </p>
+          <br />
+          <button id="course_btn2">Get Started</button>
+        </div>
+        <div>
+          <img id="course_imgs" src="./assets/course-2.jpg" alt="course-1" />
+          <h1 id="crh">Graphic Design</h1>
+          <span style="display: flex; flex-direction: row; gap: 10px">
+            <span style="display: flex; flex-direction: row">
+              <img
+                style="margin: 5px",
+                height="10px"
+                
+                width="12px"
+                src="./assets/time-svgrepo-com.svg"
+              />
+              <p display="font-size:15px;">120 Days</p>
+            </span>
+            <span style="display: flex; flex-direction: row">
+              <img
+                style="margin: 5px",
+                height="13px"
+                src="./assets/certificate-contract-svgrepo-com.svg"
+              />
+
+              <p display="font-size:15px;">Certificate</p>
+            </span>
+          </span>
+          <p id="course_p">
+            Enrol and get eligible for high paying jobs.Graphic design is the art of visually communicating ideas through typography, imagery, and layout. It involves tools like Adobe Photoshop, Illustrator, and Canva to create logos, branding, and digital content.
+          </p>
+          <br />
+          <button id="course_btn3">Get Started</button>
+        </div>
+      </div>
+      <div class="learning_partner">
+        <div class="left">
+          <img
+            id="l-img"
+            src="./assets/learning_partner.png"
+            alt="Students Learning"
+          />
+          <div class="info-boxes">
+            <div class="info-box">
+              <h4>Most Qualified Teachers</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
+            <div class="info-box">
+              <h4>Best Online Course</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
+            <!-- <div class="info-box">
+              <h4>Personalized Learning Paths</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div> -->
+          </div>
+        </div>
+        <div class="right">
+          <h3>Why Choose Us</h3>
+          <h1>Your Ideal Learning Partner</h1>
+          <br />
+          <h2>🚀 Transformative Learning Experience</h2>
+          <p style="font-size: 18px">
+            Our platform goes beyond traditional education by offering engaging,
+            interactive, and practical learning experiences that empower you
+            with real-world skills.
+          </p>
+          <br />
+          <h2>🎓 Expert-Led Courses</h2>
+          <p style="font-size: 18px">
+            Learn from industry leaders, subject matter experts, and top
+            educators who bring years of experience and knowledge to each
+            course.
+          </p>
+          <br/>
+          <div class="st">
+            <div class="sb">
+              <span id="lrs">10,000+</span><br /><span>Satisfied Students</span>
+            </div>
+            <div class="sb">
+              <span id="lrs">30+</span><br /><span>Years Experience</span>
+            </div>
+            <div class="sb">
+              <span id="lrs">72+</span><br /><span>Faculty Courses</span>
+            </div>
+            <div class="sb">
+              <span id="lrs">250+</span><br /><span>Teachers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+       <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="logo">Mana College</h2>
+                <p><i class="fas fa-phone"></i> +91-9676504864</p>
+                <p><i class="fas fa-envelope"></i> hello@reallygreatsite.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City, ST 12345</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="subform">
+                    <input for="sub" type="email" required placeholder="Email Address">
+                    <button type="submit" id="sub">SUBSCRIBE</button>
+                  </form>
+                </div>
+                <div class="links">
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="useful-links">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="working-hours">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday<br>9 AM - 3 PM</p>
+                        <p>Weekend<br>Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+      
+    </body>
+  </body>
+</html>

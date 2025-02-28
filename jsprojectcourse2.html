@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body, html {
+          overflow-x: hidden;
+          width: 100%;
+        }
+      
+      /* img {
+        max-width: 100%;
+        height: auto;
+      } */
+       #todo{
+          cursor: pointer;
+       }
+      
+      #nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #224099;
+        color: white;
+        /* position: sticky; */
+        top: 0;
+        padding: 15px;
+        z-index: 1000;
+        margin-bottom: 3%;
+      }
+      
+      /* DROPDOWN MENU */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      
+      /* DROPDOWN BUTTON */
+      .dropbtn {
+        padding: 10px;
+      }
+      
+      /* DROPDOWN CONTENT */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        z-index: 1000;
+        top: 100%;
+        left: 0;
+      }
+      
+      .dropdown-content a {
+        margin: 0;
+        padding: 0;
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* HOVER EFFECT */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      #mu {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #nav_btn {
+        border-color: aliceblue;
+        height: 30%;
+        padding: 8px;
+        font-size: 20px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-top: 0px;
+      }
+      #title {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* flex-direction:row; */
+        align-items: center;
+        justify-content: space-between;
+        gap: 10%;
+        /* font-style: oblique; */
+        box-sizing: border-box;
+      }
+      
+      #ta1,#ta2 {
+        text-decoration: none;
+        color: white;
+      }
+      
+      #MC {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(217, 238, 111);
+        border-radius: 8px;
+        border: 5px solid #224099;
+      }
+      @media (max-width: 768px) {
+  #nav {
+    flex-direction: column; 
+    padding: 10px;
+    
+  }
+
+  #nav h3,
+  .dropdown {
+    margin: 5px 0;
+  }
+}
+#video {
+    width:80vw;/* Full viewport width */
+    
+    margin: auto;
+    height: 56.25vw; /* Aspect ratio of 16:9 (9/16 = 0.5625) */
+    max-height: 100vh; /* Ensure it doesn't exceed the viewport height */
+    position: relative; /* For positioning the iframe */
+    overflow: hidden; /* Hide any overflow */
+
+}
+
+iframe {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+    width: 80%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+}
+#head{
+    text-align: center;
+    /* display: flex; */
+    
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1E90FF; /* DodgerBlue */
+    text-shadow: 2px 2px 5px rgba(30, 144, 255, 0.5);
+    padding: 10px;
+    /* border: 2px solid #1E90FF; */
+    /* margin-top: 10%; */
+   
+    margin: auto;
+     border-radius: 8px;
+}
+
+    
+.testimonial-section {
+    width: 80vw;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px auto; /* Center the section */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px;
+    align-items: start; /* Align items to the top */
+}
+
+.testimonial-image {
+    width: 100%; /* Make the image responsive */
+    margin-top: 10vh;
+    height: 670px;
+    /* height: auto;  */
+    border-radius: 20px;
+    grid-column: 1 / 2; /* Place the image in the first column */
+}
+
+.testimonials {
+    margin-top: 13vh;
+    grid-column: 2 / 3; /* Place testimonials in the second column */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.testimonial-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.testimonial-user div {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-user div span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.testimonial-user div small {
+    font-size: 12px;
+    color: gray;
+}
+
+h2 {
+    grid-column: span 2; /* Span across both columns */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .testimonial-section {
+        grid-template-columns: 1fr; /* Switch to a single column on smaller screens */
+    }
+
+    .testimonial-image {
+        height: auto;
+        grid-column: 1 / 2; /* Place the image in the first column */
+    }
+
+    .testimonials {
+        margin-top: 0px;
+        grid-column: 1 / 2; /* Place testimonials below the image */
+    }
+}
+
+.faq-container {
+            /* max-width: 700px; */
+            width: 80vw;
+            margin: auto;
+            margin-bottom: 5%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: #2e2579;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #2e2579;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-answer {
+            background: #fff;
+            color: #333;
+            padding: 15px 20px;
+            display: none;
+            font-size: 16px;
+        }
+
+        .faq-question::after {
+            content: "▼";
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        footer {
+  color: white;
+  background-color: #0e0c25;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
+  font-size: 20px;
+  gap: 10px;
+  padding: 10px;
+  margin: auto;
+  /* height:40vh; */
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  max-width: 300px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-left p {
+  margin: 8px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.footer-right {
+  flex-grow: 1;
+  max-width: 700px;
+}
+
+.newsletter input {
+  width: 60%;
+  padding: 8px;
+  border: none;
+  margin-top: 5px;
+}
+
+.newsletter button {
+  padding: 8px 15px;
+  background-color: #d4c3b8;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.links {
+  display: flex;
+  /* justify-content:space-around; */
+  /* justify-content: space-evenly; */
+  justify-content: stretch;
+  /* margin: 20%; */
+  margin-top: 20px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links ul li {
+  margin: 5px 0;
+}
+
+.links ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.working-hours p {
+  margin: 5px 0;
+}
+@media screen and (min-width:0px) and (max-width:600px){
+    .links{
+        justify-content: space-evenly;
+    }
+}
+    
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div id="title">
+          <img src="./assets/icon.png" height="50px" width="50px" alt="" />
+          <div id="MC">
+            <h1 style="color: rgba(0, 0, 0, 0.916)">MANA</h1>
+            <h1 style="color: rgb(232, 67, 7)">COLLEGE</h1>
+          </div>
+        </div>
+
+        <h3 id="ta1">Home</h3>
+        <h3 id="ta2">About</h3>
+
+        <!-- Courses Dropdown -->
+        <div class="dropdown">
+          <h3 class="dropbtn">Courses ⌵</h3>
+          <div class="dropdown-content">
+            <a id="cr1">Web Development</a>
+            <a id="cr2">Data Science</a>
+            <a  id="cr3">Graphic Design</a>
+          </div>
+        </div>
+
+        <!-- Pages Dropdown -->
+        <div class="dropdown">
+          <h3 class="dropbtn">Pages ⌵</h3>
+          <div class="dropdown-content">
+            <a href="#">Pricing</a>
+            <a href="#">Career</a>
+            <a href="#">Teacher</a>
+            <a href="#">FAQ</a>
+            <a href="#">404 Page</a>
+          </div>
+        </div>
+
+        <h3 id="todo">Plan activities<h3>
+        <button id="nav_btn">Logout</button>
+      </nav>
+      <h1 id="head">Data Science - Science,Technology and Data  </h1>
+      <section id="video">
+        <iframe src="https://www.youtube.com/embed/-ETQ97mXXF0?si=lpsrRx8xm9yTd37R" 
+                title="YouTube video player"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+    </section>
+    
+    <div class="testimonial-section">
+        <div class="t_img">
+            <img class="testimonial-image" src="./assets/review.jpg" alt="Students">
+        </div>
+        
+        <div class="testimonials">
+            <h2 >What Our Learners Say</h2>
+    
+            <div class="testimonial-card">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+                    <div>
+                        <span>John Doe</span>
+                        <small>Datascientist</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User">
+                    <div>
+                        <span>Jane Doe</span>
+                        <small>Developer</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User">
+                    <div>
+                        <span>Emily Smith</span>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="User">
+                    <div>
+                        <span>Sarah Johnson</span>
+                        <small>Web Developer</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item active">
+            <button class="faq-question">What types of courses do you offer?</button>
+            <div class="faq-answer">
+                <p>We offer a wide range of online courses in categories such as business management, technology, agriculture business, visual design, and finance. Each course is designed to provide in-depth knowledge and practical skills to help you succeed in your chosen field.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">How can I enroll in a course?</button>
+            <div class="faq-answer">
+                <p>You can enroll in a course by visiting our website, selecting your desired course, and following the enrollment instructions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What are the payment options for courses?</button>
+            <div class="faq-answer">
+                <p>We accept credit cards, PayPal, and bank transfers. Some courses also offer installment plans.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I get a refund if I'm not satisfied with the course?</button>
+            <div class="faq-answer">
+                <p>Yes, we offer a refund policy within the first 7 days of enrollment if you are not satisfied with the course.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Do you provide certificates upon course completion?</button>
+            <div class="faq-answer">
+                <p>Yes! Upon successful completion of a course, you will receive a certificate of completion.</p>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="logo">Mana College</h2>
+                <p><i class="fas fa-phone"></i> +91-9676504864</p>
+                <p><i class="fas fa-envelope"></i> hello@reallygreatsite.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City, ST 12345</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="subform">
+                    <input for="sub" type="email" required placeholder="Email Address">
+                    <button type="submit" id="sub">SUBSCRIBE</button>
+                  </form>
+                </div>
+                <div class="links">
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="useful-links">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="working-hours">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Friday<br>9 AM - 3 PM</p>
+                        <p>Weekend<br>Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        let home = document.getElementById("ta1")
+        home.addEventListener("click",()=>{
+           location.assign("./jsproject3.html")
+        })
+        let cr1 = document.getElementById("cr1")
+        cr1.addEventListener("click",()=>{
+           location.assign("./jsprojectcourse1.html")
+        })
+        let cr2 = document.getElementById("cr2")
+        cr2.addEventListener("click",()=>{
+           location.assign("./jsprojectcourse2.html")
+        })
+        let cr3 = document.getElementById("cr3")
+        cr3.addEventListener("click",()=>{
+           location.assign("./jsprojectcourse3.html")
+        })
+        let logout = document.getElementById("nav_btn");
+        logout.addEventListener("click", () => {
+          location.replace("./firebase.html");
+        });
+    </script>
+      
+
+    </body>
+</html>
