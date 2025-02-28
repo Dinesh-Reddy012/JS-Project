@@ -2,7 +2,7 @@ import {
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "./firebase.js";
+} from "firebase.js";
 
 let signupForm = document.getElementById("signup");
 let signinForm = document.getElementById("signin");
@@ -38,7 +38,7 @@ signinForm.addEventListener("submit",(e)=>{
     .then((x) => {
        if(x.user.accessToken){
           alert("login successful")
-          location.replace("./jsproject1.html")
+          location.replace("jsproject3.html")
        }
     })
     .catch((e) => {
