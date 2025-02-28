@@ -4,27 +4,148 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <style>
-      body {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      
+     /* li{
+      list-style: none;
+     } */
+      #ta1,
+      #ta2 {
+        color: white;
+      }
+
+      #tmc {
+        gap: 3%;
+      }
+
+      #MC h1:first-child {
+        color: rgba(0, 0, 0, 0.916);
+        font-size: 1.6em;
+      }
+      #MC h1:last-child {
+        color: rgb(232, 67, 7);
+        font-size: 1.6em;
+      }
+
+      @media screen and (min-width: 1300px) and (max-width: 100vw) {
+        .nav-item {
+          margin-left: 85px;
+        }
+        #nav {
+          display: flex;
+          padding-left: 6%;
+          padding-right: 6%;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
+      @media screen and (min-width: 990px) and (max-width: 1299px) {
+        .nav-item {
+          margin-left: 30px;
+        }
+        #nav {
+          display: flex;
+          padding-left: 3%;
+          padding-right: 3%;
+        }
+      }
+
+      #todo {
+        cursor: pointer;
+      }
+
+      #MC {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-content: center;
         align-items: center;
-         /* height:500px; */
-        /* margin-bottom: 25%; */
-        /* margin-top: 0vh; */
-        background-color: #cfdeee;
+        padding: 1.7%;
+        background-color: rgb(217, 238, 111);
+        border-radius: 8px;
+        border: 5px solid #224099;
       }
-      ul {
+      @media screen and (min-width: 0px) and (max-width: 500px) {
+        #icon {
+          height: 70px;
+          width: 70px;
+        }
+
+        #MC h1:first-child {
+          font-size: 22px;
+        }
+        #MC h1:last-child {
+          font-size: 22px;
+        }
+        #ta {
+          color: white;
+        }
+        #pagesDropdown,
+        #coursesDropdown,
+        #todo {
+          color: white;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
+      @media screen and (min-width: 500px) and (max-width: 100vw) {
+        #pagesDropdown,
+        #coursesDropdown,
+        #todo {
+          color: white;
+        }
+
+        #icon {
+          height: 100px;
+          width: 100px;
+        }
+        #nav_btn {
+          color: black;
+          background-color: white;
+        }
+      }
+      #con{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
       }
+      #plan{
+        text-align: center;
+        font-family: "Arial", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #31210f; 
+        text-shadow: 2px 2px 5px rgba(104, 118, 131, 0.5);
+        padding: 10px;
+        margin: auto;
+        border-radius: 8px;
+      
+      }
 
-      li {
+     #del {
         color: rgb(19, 16, 16);
+        text-decoration: none;
         margin: auto;
         display: list-item;
         list-style-type: decimal;
@@ -34,27 +155,26 @@
       }
 
       #md {
-        background-image: url("./assets/todo-5.jpg");
-        background-size: cover;
-
-        border: 2px transparent;
+        /* background-image: url("./todo-5.jpg");
+        background-size: cover; */
+        background-color: #d4d9e7;
+        border: 2px solid ;
         display: flex;
-        width: 50vw;
-        /* height: 50vh; */
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
         flex-wrap: wrap;
         display: inline-block;
-        padding-left: 50px;
+        /* padding-left: 50px; */
         flex-direction: column;
         gap: 10px;
         padding: 5px;
         height: 90vh;
-
-        justify-content: center;
+        /* margin: auto; */
+       justify-content: center; 
         align-items: center;
-        text-align: center;
-        /* align-content: center; */
+        text-align: center; 
       }
-    /* rgb(239, 209, 228) */
       button {
         color: white;
         display: inline;
@@ -63,28 +183,246 @@
         box-shadow: 1px;
         margin: 7px;
       }
-      #tp{
+      /* #tp {
         margin-top: -1px;
         margin-bottom: 43px;
-        /* padding-bottom: 5px; */
+        padding-bottom: 5px;
+      } */
+      footer {
+        color: white;
+        background-color: #0e0c25;
+        padding: 40px 20px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 80%;
+        font-size: 20px;
+        gap: 10px;
+        padding: 10px;
+        margin: auto;
+        /* height:40vh; */
+        flex-wrap: wrap;
+      }
+
+      .footer-left {
+        max-width: 300px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .footer-left p {
+        margin: 8px 0;
+      }
+
+      .social-icons a {
+        margin-right: 10px;
+        color: white;
+        font-size: 20px;
+      }
+
+      .footer-right {
+        flex-grow: 1;
+        max-width: 700px;
+      }
+
+      .newsletter input {
+        width: 60%;
+        padding: 8px;
+        border: none;
+        margin-top: 5px;
+      }
+
+      .newsletter button {
+        padding: 8px 15px;
+        background-color: #d4c3b8;
+        border: none;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .links {
+        display: flex;
+        justify-content: stretch;
+        margin-top: 20px;
+      }
+
+      .links ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .links ul li {
+        margin: 5px 0;
+      }
+
+      .links ul li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .working-hours p {
+        margin: 5px 0;
+      }
+      @media screen and (min-width: 0px) and (max-width: 600px) {
+        .links {
+          justify-content: space-evenly;
+        }
       }
     </style>
   </head>
 
   <body>
-    <h1>Plan your work and work your plan.</h1>
+    <nav
+      id="nav"
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #224099"
+    >
+      <div class="container-fluid">
+        <a id="tmc" class="navbar-brand d-flex align-items-center" href="#">
+          <img id="icon" src="./icon.png" alt="" />
+          <div id="MC" class="ms-2">
+            <h1>MANA</h1>
+            <h1>COLLEGE</h1>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="ta1" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="ta2" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="coursesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Courses</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" id="cr1" href="#course_imgs"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" id="cr2" href="#course_imgs"
+                    >Data Science</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" id="cr3" href="#course_imgs"
+                    >Graphic Design</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="pagesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#course_imgs">Career</a></li>
+                <li>
+                  <a class="dropdown-item" id="teacher" href="#">Teacher</a>
+                </li>
+                <li><a class="dropdown-item" id="faq" href="#">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">404 Page</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="todo" href="#">Plan Activities</a>
+            </li>
+            <li class="nav-item">
+              <button id="nav_btn" class="btn btn-outline-light">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 id="plan">Plan your work and work your plan.</h1>
     <div id="md">
       <h1 id="tp">Todo App</h1>
       <input id="input1" placeholder="entertask" type="text" />
       <button id="btn1">Submit</button>
-      <ul style="list-style: none">
-        <li>read news paper<button class="delete">delete</button></li>
+      <ul id="con" style="list-style: none">
+        <li id="del" >read news paper<button class="delete">delete</button></li>
       </ul>
     </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2 class="logo">Mana College</h2>
+          <p><i class="fas fa-phone"></i> +91-9676504864</p>
+          <p><i class="fas fa-envelope"></i> hello@reallygreatsite.com</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City, ST
+            12345
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form id="subform">
+              <input
+                for="sub"
+                type="email"
+                required
+                placeholder="Email Address"
+              />
+              <button type="submit" id="sub">SUBSCRIBE</button>
+            </form>
+          </div>
+          <div class="links">
+            <div class="quick-links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="working-hours">
+              <h3>Working Hours</h3>
+              <p>Monday - Friday<br />9 AM - 3 PM</p>
+              <p>Weekend<br />Closed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
       let btn = document.querySelector("#btn1");
       let inp = document.querySelector("#input1");
-      let ul = document.querySelector("ul");
+      let ul = document.getElementById("con");
 
       btn.addEventListener("click", function () {
         let item = document.createElement("li");
@@ -98,12 +436,12 @@
         }
         inp.value = "";
       });
-      inp.addEventListener("keydown",()=>{
-        inp.style.backgroundColor="#cfdeee"
-      })
-      inp.addEventListener("keyup",()=>{
-        inp.style.backgroundColor=""
-      })
+      inp.addEventListener("keydown", () => {
+        inp.style.backgroundColor = "#cfdeee";
+      });
+      inp.addEventListener("keyup", () => {
+        inp.style.backgroundColor = "";
+      });
       //   inp.addEventListener("mouseover", () => {
       //     inp.style.backgroundColor = "aqua";
       //   });
