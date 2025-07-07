@@ -1,6 +1,6 @@
 let logout = document.getElementById("nav_btn");
 logout.addEventListener("click", () => {
-  location.replace("./index.html");
+  location.assign("./index.html");
 });
 
 let todo = document.getElementById("todo");
